@@ -24,6 +24,6 @@ variable "gcp_zone" {
   default = "us-east1-b"
 }
 
-variable "project" {
+variable "gcp_project" {
   description = "GCP project name"
 }
