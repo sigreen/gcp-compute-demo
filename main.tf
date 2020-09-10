@@ -1,6 +1,6 @@
 provider "google" {
   version = "~> 2.0"  
-  project = var.project
+  project = var.gcp_project
   region  = var.region
 }
 
