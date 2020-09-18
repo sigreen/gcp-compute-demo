@@ -69,25 +69,14 @@ resource "null_resource" "configure-hashicups" {
     build_number = timestamp()
   }
 
-/*  provisioner "file" {
-    source      = "files/"
-    destination = "/home/ubuntu/"
-
-    connection {
-      type        = "ssh"
-      user        = "ubuntu"
-      timeout     = "300s"
-      private_key = tls_private_key.ssh-key.private_key_pem
-      host        = google_compute_instance.hashicups.network_interface.0.access_config.0.nat_ip
-    }
-  }
-*/
   provisioner "remote-exec" {
     inline = [
       "sudo apt -y install docker.io",
       "sudo curl -L \"https://github.com/docker/compose/releases/download/1.27.0/docker-compose-$(uname -s)-$(uname -m)\" -o /usr/local/bin/docker-compose",
       "sudo chmod +x /usr/local/bin/docker-compose",
       "sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose",
+      "sudo curl -O https://raw.githubusercontent.com/jelinn/gcp-compute-demo/master/files/deployApp.sh && chmod +x ./deployApp.sh",
+      "sudo ./deployApp.sh"
    ]
 
     connection {
