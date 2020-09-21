@@ -13,7 +13,6 @@ variable "subnet_prefix" {
 
 variable "prefix" {
   description = "Prefix"
-  default = "jl-tfdemo"
 }
 variable "gcp_instance_name" {
   description = "GCP Instance Name"
