@@ -73,7 +73,7 @@ resource "null_resource" "configure-hashicups" {
     inline = [
       "sudo add-apt-repository universe",
       "sudo apt -y update",
-      "sudo apt -y install docker.io"
+      "sudo apt -y install docker.io",
       "sudo curl -O https://raw.githubusercontent.com/jelinn/gcp-compute-demo/devbox/files/deployApp.sh",
       "sudo chmod +x ./deployApp.sh",
       "sudo ./deployApp.sh"
