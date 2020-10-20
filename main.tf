@@ -42,7 +42,7 @@ resource "google_compute_instance" "hashicups" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-1804-lts"
+      image = "centos-cloud/centos-7"
     }
   }
 
