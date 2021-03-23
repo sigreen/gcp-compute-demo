@@ -12,11 +12,3 @@ output "priv-key"{
   value = tls_private_key.ssh-key.private_key_pem
   sensitive = true
 }
-
-output "network"{
-  sensitive = true
-  }
-
-output "subnets"{
-  sensitive = true
-  }
