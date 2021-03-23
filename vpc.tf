@@ -13,3 +13,4 @@ module "vpc" {
             subnet_region         = var.gcp_region
         }
     ]
+}
